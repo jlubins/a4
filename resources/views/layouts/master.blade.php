@@ -10,8 +10,7 @@
 	<link href="/css/bootstrap.css" type='text/css' rel='stylesheet'>
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" type='text/css' rel='stylesheet'>
 	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Coda">
-	<link href="/css/a4.css" type='text/css' rel='stylesheet'>
- @stack('head')
+	<link href="/css/a4.css" type='text/css' rel='stylesheet'> @stack('head')
 
 </head>
 
@@ -35,20 +34,18 @@
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
 						@if(Auth::check())
-	            <li class="nav-item"><a href='/home'>Home</a></li>
-	            <li class="nav-item"><a href='/tags'>Tags</a></li>
-	            <li class="nav-item"><a href='/placeholder2'>Placeholder2</a></li>
-	            <li class="nav-item">
-	                <form method='POST' id='logout' action='/logout'>
-	                    {{csrf_field()}}
-	                    <a href='#' onClick='document.getElementById("logout").submit();'>Logout</a>
-	                </form>
-	            </li>
-	        @else
-	            <li><a href='/home'>Home</a></li>
-	            <li><a href='/login'>Login</a></li>
-	            <li><a href='/register'>Register</a></li>
-	        @endif
+						<li class="nav-item"><a href='/home'>Home</a></li>
+						<li class="nav-item">
+							<form method='POST' id='logout' action='/logout'>
+								{{csrf_field()}}
+								<a href='#' onClick='document.getElementById("logout").submit();'>Logout</a>
+							</form>
+						</li>
+						@else
+						<li><a href='/home'>Home</a></li>
+						<li><a href='/login'>Login</a></li>
+						<li><a href='/register'>Register</a></li>
+						@endif
 					</ul>
 				</div>
 				<!-- /.navbar-collapse -->

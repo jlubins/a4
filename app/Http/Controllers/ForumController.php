@@ -32,10 +32,10 @@ class ForumController extends Controller
 
     public function postView($postid)
     {
-    //retrieve posts and replies from database
+        //retrieve posts and replies from database
     $posts = ForumPost::where('id', $postid)->get();
-    dump($posts);
-    $replies = ForumPost::where('parent_post', $postid)->get();
+        dump($posts);
+        $replies = ForumPost::where('parent_post', $postid)->get();
 
     //get currently logged in user's id
     $userid = \Auth::id();
@@ -46,11 +46,11 @@ class ForumController extends Controller
         $match1 = ForumPost::where('id_user', $userid)->get()->toArray();
     }
 
-    foreach ($replies as $reply) {
-        $user2 = User::where('id', $reply['id_user'])->get()->toArray();
-        $match2 = ForumPost::where('id_user', $userid)->get()->toArray();
-        return view('post.{postid}')->with('posts', $posts)->with('replies', $replies)->with('user1', $user1)->with('match1', $match1)->with('user2', $user2)->with('match2', $match2);
-    }
+        foreach ($replies as $reply) {
+            $user2 = User::where('id', $reply['id_user'])->get()->toArray();
+            $match2 = ForumPost::where('id_user', $userid)->get()->toArray();
+            return view('post.{postid}')->with('posts', $posts)->with('replies', $replies)->with('user1', $user1)->with('match1', $match1)->with('user2', $user2)->with('match2', $match2);
+        }
 
     //send all of this info to post view
     return view('post.{postid}')->with('posts', $posts)->with('replies', $replies)->with('user1', $user1)->with('match1', $match1);
@@ -109,22 +109,20 @@ class ForumController extends Controller
 
     public function submitPostEdit($postid, Request $request)
     {
-      $this->validate($request, [
+        $this->validate($request, [
         'content' => 'required|max:2000',
       ]);
 
-      $editedposts = ForumPost::where('id', $postid)->get();
-      dump($editedposts);
-      $idexists = ForumPost::find($postid);
+        $editedposts = ForumPost::where('id', $postid)->get();
+        dump($editedposts);
+        $idexists = ForumPost::find($postid);
 
-      if ($idexists) {
-        foreach($editedposts as $editedpost)
-        {
-          $editedpost->content = $request->content;
-          $editedpost->save();
+        if ($idexists) {
+            foreach ($editedposts as $editedpost) {
+                $editedpost->content = $request->content;
+                $editedpost->save();
+            }
         }
-
-      }
       //supposed to redirect back to the thread the post was made in, but redirects to a page of its own
       return redirect()->route('thread', $postid);
     }

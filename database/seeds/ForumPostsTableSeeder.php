@@ -12,7 +12,7 @@ class ForumPostsTableSeeder extends Seeder
      */
     public function run()
     {
-      ForumPost::insert([
+        ForumPost::insert([
           'created_at' => Carbon\Carbon::now()->toDateTimeString(),
           'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
           'ip' => \Request::ip(),
@@ -23,7 +23,7 @@ class ForumPostsTableSeeder extends Seeder
           'id_user' => '1',
       ]);
 
-      ForumPost::insert([
+        ForumPost::insert([
           'created_at' => Carbon\Carbon::now()->toDateTimeString(),
           'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
           'ip' => \Request::ip(),
@@ -34,7 +34,7 @@ class ForumPostsTableSeeder extends Seeder
           'id_user' => '2',
       ]);
 
-      ForumPost::insert([
+        ForumPost::insert([
           'created_at' => Carbon\Carbon::now()->toDateTimeString(),
           'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
           'ip' => \Request::ip(),
@@ -45,7 +45,7 @@ class ForumPostsTableSeeder extends Seeder
           'id_user' => '1',
       ]);
 
-      ForumPost::insert([
+        ForumPost::insert([
           'created_at' => Carbon\Carbon::now()->toDateTimeString(),
           'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
           'ip' => \Request::ip(),
@@ -56,7 +56,7 @@ class ForumPostsTableSeeder extends Seeder
           'id_user' => '2',
       ]);
 
-      ForumPost::insert([
+        ForumPost::insert([
           'created_at' => Carbon\Carbon::now()->toDateTimeString(),
           'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
           'ip' => \Request::ip(),
@@ -67,7 +67,7 @@ class ForumPostsTableSeeder extends Seeder
           'id_user' => '1',
       ]);
 
-      ForumPost::insert([
+        ForumPost::insert([
           'created_at' => Carbon\Carbon::now()->toDateTimeString(),
           'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
           'ip' => \Request::ip(),
@@ -79,7 +79,7 @@ class ForumPostsTableSeeder extends Seeder
       ]);
 
 
-      ForumPost::insert([
+        ForumPost::insert([
           'created_at' => Carbon\Carbon::now()->toDateTimeString(),
           'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
           'ip' => \Request::ip(),
@@ -90,7 +90,7 @@ class ForumPostsTableSeeder extends Seeder
           'id_user' => '1',
       ]);
 
-      ForumPost::insert([
+        ForumPost::insert([
           'created_at' => Carbon\Carbon::now()->toDateTimeString(),
           'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
           'ip' => \Request::ip(),
@@ -102,7 +102,7 @@ class ForumPostsTableSeeder extends Seeder
       ]);
 
 
-      ForumPost::insert([
+        ForumPost::insert([
           'created_at' => Carbon\Carbon::now()->toDateTimeString(),
           'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
           'ip' => \Request::ip(),
@@ -113,7 +113,7 @@ class ForumPostsTableSeeder extends Seeder
           'id_user' => '1',
       ]);
 
-      ForumPost::insert([
+        ForumPost::insert([
           'created_at' => Carbon\Carbon::now()->toDateTimeString(),
           'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
           'ip' => \Request::ip(),
@@ -125,7 +125,7 @@ class ForumPostsTableSeeder extends Seeder
       ]);
 
 
-      ForumPost::insert([
+        ForumPost::insert([
           'created_at' => Carbon\Carbon::now()->toDateTimeString(),
           'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
           'ip' => \Request::ip(),
@@ -136,7 +136,7 @@ class ForumPostsTableSeeder extends Seeder
           'id_user' => '1',
       ]);
 
-      ForumPost::insert([
+        ForumPost::insert([
           'created_at' => Carbon\Carbon::now()->toDateTimeString(),
           'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
           'ip' => \Request::ip(),
@@ -146,6 +146,5 @@ class ForumPostsTableSeeder extends Seeder
           'id_category' => '6',
           'id_user' => '2',
       ]);
-
     }
 }

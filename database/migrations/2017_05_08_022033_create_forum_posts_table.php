@@ -13,17 +13,17 @@ class CreateForumPostsTable extends Migration
      */
     public function up()
     {
-      Schema::create('forum_posts', function (Blueprint $table) {
-          $table->increments('id');
-          $table->integer('id_category');
-          $table->integer('id_user');
-          $table->integer('parent_post')->nullable();
-          $table->string('title', 90)->nullable();
-          $table->text('content');
-          $table->boolean('is_poll');
-          $table->timestamps();
-          $table->ipAddress('ip');
-      });
+        Schema::create('forum_posts', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('id_category');
+            $table->integer('id_user');
+            $table->integer('parent_post')->nullable();
+            $table->string('title', 90)->nullable();
+            $table->text('content');
+            $table->boolean('is_poll');
+            $table->timestamps();
+            $table->ipAddress('ip');
+        });
     }
 
     /**
