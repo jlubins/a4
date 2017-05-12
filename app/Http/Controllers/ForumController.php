@@ -34,7 +34,6 @@ class ForumController extends Controller
     {
         //retrieve posts and replies from database
     $posts = ForumPost::where('id', $postid)->get();
-        dump($posts);
         $replies = ForumPost::where('parent_post', $postid)->get();
 
     //get currently logged in user's id
