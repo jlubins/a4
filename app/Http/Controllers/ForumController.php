@@ -73,7 +73,6 @@ class ForumController extends Controller
     public function postDelete($postid)
     {
         $posts = ForumPost::where('parent_post', $postid)->orWhere('id', $postid)->get();
-        dump($posts);
         foreach ($posts as $post) {
             $post->tags()->detach();
             $post->delete();
@@ -114,7 +113,6 @@ class ForumController extends Controller
       ]);
 
         $editedposts = ForumPost::where('id', $postid)->get();
-        dump($editedposts);
         $idexists = ForumPost::find($postid);
 
         if ($idexists) {
